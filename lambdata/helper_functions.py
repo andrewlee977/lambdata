@@ -1,4 +1,4 @@
-"""Helper Functions"""
+"""Helper Functions to wrangle a DataFrame"""
 
 import pandas as pd 
 import numpy as np
@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split
 class WrangledDataFrame:
     
     def __init__(self, my_df):
+        """Constructor that creates DF object"""
         self.df = my_df
     
     def null_count(self):
@@ -26,17 +27,25 @@ class WrangledDataFrame:
         col = pd.Series(list_2_series)
         self.df['new_col'] = col
         return self.df
+    
+#     # def randomizer(self, frac):
+#     #     """Randomizes cells in a DataFrame"""
+#     #     return self.df.sample(frac=1)
 
-        
+
+# class ShortAColumn(Exception):
+#     pass
+
 # class MyDataFrame(pd.DataFrame):
-#     # def __init__(self, null, split, newcol):
+#     # def __init__(self, null=None, split=None, newcol=None):
 #     #     self.null = null
 #     #     self.split = split
 #     #     self.newcol = newcol
     
 #     def null_count(self):
 #         """Counts null values"""
-#         return self.isnull().sum().sum()
+#         self.isnull().sum().sum()
+#         return 
 
 #     def train_test_split(self, frac):
 #         mask = round(len(self) * frac)
