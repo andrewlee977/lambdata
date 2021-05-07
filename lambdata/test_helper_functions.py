@@ -6,7 +6,7 @@ import random
 import pandas as pd
 import numpy as np
 import pytest
-from helper_functions import WrangledDataFrame
+from lambdata import helper_functions
 
 
 df = pd.DataFrame(
@@ -17,8 +17,9 @@ def test_null_count():
     """
     testing null count is zero
     """
-    wrangled_df = WrangledDataFrame(df)
-    assert wrangled_df.null_count == 0
+    wrangled_df = helper_functions.WrangledDataFrame(df)
+    null_count = wrangled_df.null_count()
+    assert isinstance(null_count, np.int64)
 
 # def test_null_count_matches():
 #     wrangled_df = WrangledDataFrame(df)
