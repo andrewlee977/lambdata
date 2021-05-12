@@ -43,13 +43,13 @@ class Product:
 
 
 class BoxingGlove(Product):
-    def __init___(self, name, price, weight, flammability, 
-                  identifier):
+    def __init___(self, name, price, flammability,
+                  identifier, weight=10):
         """
         Part 3: Constructor initializes BoxingGlove class
         """
-        super().__init__(name, price=10, weight=10, flammability=0.5,
-                         identifier=random.randint(1000000, 9999999))
+        super().__init__(name, price, weight, flammability,
+                         identifier)
 
     def explode(self):
         """
